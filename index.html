@@ -72,7 +72,7 @@
         }
         .chat-container {
             width: 100%;
-            height: calc(100vh - 85px);
+            height: calc(100vh - 85px - 45px);
             max-width: 900px;
             margin: 0 auto;
             background: white;
@@ -83,6 +83,32 @@
             height: 100%;
             border: none;
             display: block;
+        }
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.82rem;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .footer a:hover {
+            color: #667eea;
+        }
+        .footer .divider {
+            width: 1px;
+            height: 18px;
+            background: rgba(255,255,255,0.2);
         }
     </style>
 </head>
@@ -103,6 +129,15 @@
             src="https://whitelilly-app-py.hf.space"
             allow="microphone"
         ></iframe>
+    </div>
+    <div class="footer">
+        <a href="mailto:kristine.kraisa@gmail.com">
+            ✉️ Email Me
+        </a>
+        <div class="divider"></div>
+        <a href="www.linkedin.com/in/businesscto" target="_blank">
+            💼 LinkedIn
+        </a>
     </div>
 </body>
 </html>
