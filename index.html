@@ -13,7 +13,6 @@
         body, html {
             height: 100%;
             width: 100%;
-            overflow: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .header {
@@ -31,31 +30,22 @@
             font-size: 0.85rem;
             opacity: 0.9;
         }
-        .iframe-wrapper {
-            width: 100%;
-            height: calc(100vh - 65px);
-            overflow: hidden;
-            position: relative;
-        }
         iframe {
             width: 100%;
-            height: calc(100% + 150px);
+            height: calc(100vh - 65px);
             border: none;
-            position: absolute;
-            top: -80px;
+            display: block;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>💬 Chat with Kristine's AI Assistant</h1>
-        <p>Ask me about my career, skills, projects, and experience!</p>
+        <p>Ask me about my career, skills, and experience!</p>
     </div>
-    <div class="iframe-wrapper">
-        <iframe
-            src="https://whitelilly-app-py.hf.space"
-            allow="microphone"
-        ></iframe>
-    </div>
+    <iframe
+        src="https://whitelilly-app-py.hf.space"
+        allow="microphone"
+    ></iframe>
 </body>
 </html>
