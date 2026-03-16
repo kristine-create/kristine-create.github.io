@@ -1,2 +1,2 @@
-# KriKri12345.github.io
-My AI-powered portfolio
+# kristine-create.github.io
+Kristine's AI-Powered Career Assistant
