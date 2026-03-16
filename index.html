@@ -10,6 +10,12 @@
             padding: 0;
             height: 100%;
             width: 100%;
+            overflow: hidden;
+        }
+        .iframe-wrapper {
+            width: 100%;
+            height: calc(100% + 40px);
+            overflow: hidden;
         }
         iframe {
             width: 100%;
@@ -19,9 +25,11 @@
     </style>
 </head>
 <body>
-    <iframe
-        src="https://whitelilly-app-py.hf.space?__theme=light"
-        allow="microphone"
-    ></iframe>
+    <div class="iframe-wrapper">
+        <iframe
+            src="https://whitelilly-app-py.hf.space"
+            allow="microphone"
+        ></iframe>
+    </div>
 </body>
 </html>
