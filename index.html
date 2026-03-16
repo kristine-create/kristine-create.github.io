@@ -13,26 +13,35 @@
         body, html {
             height: 100%;
             width: 100%;
+            overflow: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 30px;
             text-align: center;
+            height: 60px;
         }
         .header h1 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         .header p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             opacity: 0.9;
+        }
+        .iframe-wrapper {
+            width: 100%;
+            height: calc(100vh - 60px);
+            overflow-y: scroll;
+            margin-bottom: -50px;
+            padding-bottom: 0;
         }
         iframe {
             width: 100%;
-            height: calc(100vh - 65px);
+            height: 100%;
             border: none;
             display: block;
         }
@@ -41,11 +50,24 @@
 <body>
     <div class="header">
         <h1>💬 Chat with Kristine's AI Assistant</h1>
-        <p>Ask me about my career, skills, and experience!</p>
+        <p>Ask me about my career, skills, projects, and experience!</p>
     </div>
-    <iframe
-        src="https://whitelilly-app-py.hf.space"
-        allow="microphone"
-    ></iframe>
+    <div class="iframe-wrapper">
+        <iframe
+            src="https://whitelilly-app-py.hf.space"
+            allow="microphone"
+        ></iframe>
+    </div>
+
+    <script>
+        // Auto-scroll the iframe wrapper down slightly to hide Gradio header
+        // and keep footer hidden below the fold
+        window.addEventListener('load', function() {
+            const wrapper = document.querySelector('.iframe-wrapper');
+            // Make iframe taller than wrapper so footer is below visible area
+            const iframe = document.querySelector('iframe');
+            iframe.style.height = 'calc(100vh - 60px + 40px)';
+        });
+    </script>
 </body>
 </html>
