@@ -3,230 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat with Kristine's AI Assistant</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Kristine's AI Assistant</title>
     <style>
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            min-height: 100vh;
-        }
-
-        /* === HEADER === */
-        .header {
-            text-align: center;
-            padding: 50px 20px 30px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid #3b82f6;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-
-        /* Placeholder if you don't have a photo yet */
-        .avatar-placeholder {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid #3b82f6;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #1e3a5f, #2563eb);
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .header .subtitle {
-            font-size: 1.1rem;
-            color: #3b82f6;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-
-        .header .description {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* === SKILL BADGES === */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin: 20px auto;
-            max-width: 500px;
-        }
-
-        .skill {
-            background: rgba(59, 130, 246, 0.1);
-            color: #60a5fa;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        /* === CHATBOT SECTION === */
-        .chat-section {
-            max-width: 900px;
-            margin: 10px auto 30px;
-            padding: 0 20px;
-        }
-
-        .chat-label {
-            text-align: center;
-            margin-bottom: 16px;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        .chat-label span {
-            background: rgba(59, 130, 246, 0.1);
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(59, 130, 246, 0.15);
-        }
-
-        .chat-container {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: #1e293b;
-        }
-
-        .chat-container iframe {
+            height: 100%;
             width: 100%;
-            height: 550px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
             border: none;
-            display: block;
-        }
-
-        /* === SOCIAL LINKS === */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            padding: 30px 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            color: #64748b;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .social-links a:hover {
-            color: #3b82f6;
-        }
-
-        /* === FOOTER === */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #334155;
-            font-size: 0.75rem;
-        }
-
-        /* === RESPONSIVE === */
-        @media (max-width: 600px) {
-            .header { padding: 30px 16px 20px; }
-            .header h1 { font-size: 1.5rem; }
-            .chat-container iframe { height: 450px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <!-- OPTION A: Use a photo (uncomment and add your image URL) -->
-        <!-- <img class="avatar" src="photo.jpg" alt="Your Name"> -->
-
-        <!-- OPTION B: Emoji placeholder (remove this when you add a photo) -->
-        <div class="avatar-placeholder">👩‍💻</div>
-
-        <!-- ✏️ EDIT: Your name -->
-        <h1>Hi, I'm Kristine Kraisa 👋</h1>
-
-        <!-- ✏️ EDIT: Your title -->
-        <p class="subtitle">Head IT and AI Enthusiast</p>
-
-        <!-- ✏️ EDIT: Short bio -->
-        <p class="description">
-            Curious about my experience, skills, or projects?
-            Chat with my AI assistant below!
-        </p>
-
-        <!-- ✏️ EDIT: Your skills -->
-        <div class="skills">
-            <span class="skill">Management</span>
-            <span class="skill">IT Governance</span>
-            <span class="skill">Change Management</span>
-            <span class="skill">Product Management</span>
-            <span class="skill">Cyber</span>
-        </div>
-    </div>
-
-    <div class="chat-section">
-        <div class="chat-label">
-            <span>💬 Ask me anything about my career</span>
-        </div>
-        <div class="chat-container">
-            <iframe
-                src="https://whitelilly-app-py.hf.space"
-                title="AI Career Assistant"
-                loading="lazy"
-                allow="clipboard-write"
-            ></iframe>
-        </div>
-    </div>
-
-    <!-- ✏️ EDIT: Your social links (remove any you don't need) -->
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/businesscto/" target="_blank">
-            🔗 LinkedIn
-        </a>
-        <a href="mailto:kristine.kraisa@gmail.com">
-            ✉️ Email
-        </a>
-    </div>
-
-    <div class="footer">
-        Powered by AI · Built with Gradio &amp
-    </div>
-
+    <iframe
+        src="https://whitelilly-app-py.hf.space?__theme=light"
+        allow="microphone"
+    ></iframe>
 </body>
 </html>
